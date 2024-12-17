@@ -1,13 +1,16 @@
 import AxiosGetDemo from './AxiosGetDemo';
+import MyContext from './contextDemo/MyContext';
 import Home from './Home';
 import LiftingStateDemo from './LiftingStateDemo';
 import ListKeysDemo from './ListKeysDemo';
 import Navbar from './Navbar';
 import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
 
-function App() {
 
+function App() {
+const sharedValue='This is shared value';
   return (
+    <MyContext.Provider value={sharedValue}>
     <Router>
       <div className='App'>
         <Navbar/>
@@ -22,6 +25,7 @@ function App() {
         </div>
       </div>
     </Router>
+    </MyContext.Provider>
     // <div className="App">
     //   <Navbar/>
     //    <div className="content">
